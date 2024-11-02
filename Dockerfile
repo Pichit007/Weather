@@ -20,7 +20,7 @@ RUN bun install --production
 
 COPY backend/ .
 
-COPY --from=frontend /app/frontend/build ./public
+COPY --from=frontend /app/frontend/dist ./public
 
 EXPOSE 3000
 
