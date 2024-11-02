@@ -1,0 +1,5 @@
+npm install @mui/material @mui/icons-material
+
+npm install react-select-async-paginate
+
+npm install @emotion/styled

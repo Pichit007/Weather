@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Roboto+Condensed:wght@300;400;700&display=swap');
+body {
+  margin: -20;
+  font-family: 'Poppins', Arial, sans-serif !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  min-height: 100vh;
+  background: linear-gradient(-35deg, #000428 0%, #f58a587a);
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.rotating-image {
+  animation: rotate 10s linear infinite; /* Adjust the duration as needed */
+}
+
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.bounce {
+  animation: bounce 1s infinite; /* ความเร็วและจำนวนครั้งที่ต้องการให้กระเด้ง */
+}
+
+.bouncing-text {
+  display: inline-block;
+  animation: bounce 1s ease-in-out infinite;
+}
+
+
+@keyframes wave {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(-5px);
+  }
+  50% {
+    transform: translateY(5px);
+  }
+  75% {
+    transform: translateY(-3px);
+  }
+}
+
+.wavy-text {
+  display: inline-block;
+  animation: wave 10s ease-in-out infinite;
+}
