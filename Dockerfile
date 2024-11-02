@@ -22,6 +22,6 @@ COPY backend/ .
 
 COPY --from=frontend /app/frontend/dist ./public
 
-EXPOSE 3000
+EXPOSE 3001
 
 CMD ["bun", "server.js"]
