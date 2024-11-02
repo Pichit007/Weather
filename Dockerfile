@@ -2,11 +2,11 @@ FROM oven/bun AS frontend
 
 WORKDIR /app/frontend
 
-COPY check-weather/package.json ./
+COPY weather-moodeng/package.json ./
 
 RUN bun install
 
-COPY check-weather/ .
+COPY weather-moodeng/ .
 
 RUN bun run build
 

@@ -3,7 +3,7 @@ import { Box, SvgIcon, Typography } from '@mui/material';
 import AirIcon from '@mui/icons-material/Air';
 import FilterDramaIcon from '@mui/icons-material/FilterDrama';
 import ThermostatIcon from '@mui/icons-material/Thermostat';
-import { ReactComponent as HumidityIcon } from '../../assets/humidity.svg';
+import { HumidityIcon } from '../../assets/humidity';
 
 const WeeklyForecastItem = ({ value, type }) => {
   let iconContent;

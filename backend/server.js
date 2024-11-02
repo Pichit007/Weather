@@ -2,8 +2,10 @@ const express = require('express');
 const sqlite3 = require('sqlite3').verbose();
 const fetch = require('node-fetch'); // Make sure to install node-fetch if you're using Node.js < 18
 const cors = require('cors');
+const path = require('path');
 const app = express();
 const port = 3001;
+
 
 // SQLite database setup
 const db = new sqlite3.Database('./mydatabase.db', (err) => {
