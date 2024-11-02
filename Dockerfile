@@ -22,6 +22,10 @@ COPY backend/ .
 
 COPY --from=frontend /app/frontend/dist ./public
 
+COPY ssl/certs.pem /ssl/certs.pem
+
+COPY ssl/key.pem /ssl/key.pem
+
 EXPOSE 3001
 
 CMD ["bun", "server.js"]

@@ -5,7 +5,14 @@ const cors = require('cors');
 const path = require('path');
 const app = express();
 const port = 3001;
+const fs = require('fs'); // เพิ่มการนำเข้าโมดูล fs
+const https = require('https'); // เพิ่มการนำเข้าโมดูล https
 
+
+const sslOptions = {
+  key: fs.readFileSync(path.join(__dirname, 'ssl', 'key.pem')), // เปลี่ยนเป็นไฟล์ key ที่คุณมี
+  cert: fs.readFileSync(path.join(__dirname, 'ssl', 'certs.pem'))
+};
 
 // SQLite database setup
 const db = new sqlite3.Database('./mydatabase.db', (err) => {
@@ -191,6 +198,6 @@ app.get("*", (req, res) => {
   });
 
 // Start the server
-app.listen(port, () => {
-    console.log(`Server is running on http://localhost:${port}`);
+https.createServer(sslOptions, app).listen(port, () => {
+  console.log(`Server is running on https://localhost:${port}`);
 });
