@@ -6,4 +6,4 @@ services:
       - "443:3001"
     volumes:
       - ./backend:/backend
-      - ./ssl:/ssl
+      - ./ssl:/app/ssl
