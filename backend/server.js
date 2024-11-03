@@ -32,6 +32,7 @@ db.serialize(() => {
         id INTEGER PRIMARY KEY,
         city_id INTEGER,
         dt INTEGER NOT NULL,
+        name TEXT,
         temp REAL NOT NULL,
         feels_like REAL NOT NULL,
         humidity REAL NOT NULL,
@@ -115,14 +116,14 @@ export async function fetchWeatherData(lat, lon) {
     const weatherResponse = await weatherPromise.json();
     const forecastResponse = await forecastPromise.json();
 
-    const { id, dt, main } = weatherResponse;
+    const { dt, main, name } = weatherResponse;
     const { feels_like, humidity, pressure, sea_level, grnd_level, temp, temp_max, temp_min } = main;
 
     // Assuming you have a method to get city_id based on lat and lon
     const cityId = await getCityId(lat, lon); // Implement this function as needed
 
-    db.run(`INSERT INTO weather_data (id, city_id, dt, temp, feels_like, humidity, pressure, sea_level, grnd_level, temp_max, temp_min) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`, 
-    [id, cityId, dt, temp, feels_like, humidity, pressure, sea_level, grnd_level, temp_max, temp_min], 
+    db.run(`INSERT INTO weather_data (city_id, dt, name, temp, feels_like, humidity, pressure, sea_level, grnd_level, temp_max, temp_min) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`, 
+    [cityId, dt, name, temp, feels_like, humidity, pressure, sea_level, grnd_level, temp_max, temp_min], 
     function(err) {
         if (err) {
             console.log(err.message);
