@@ -32,6 +32,8 @@
     - lat : 13.8701
     - lon : 100.5161
 
+![image](https://github.com/user-attachments/assets/324f68eb-ae3d-46e2-b4ee-c9f6352662e3)
+
   3. แสดงผลสภาพอากาศโดยนำเอา API ที่ได้จาก latitude และ longitude ไปส่งค่าเป็น parameter ให้กับ API ดึงข้อมูลสภาพอากาศ ซึ่งต้องได้ข้อมูลดังต่อไปนี้ 
   Example:
     - feels_like : 33.84
@@ -43,8 +45,18 @@
     - temp_max : 31.97
     - temp_min : 31.97
     - name : "Nonthaburi"
+
+![image](https://github.com/user-attachments/assets/df70b8ee-6b50-4343-9880-31c35cbaac44)
+
+
+
   4. ส่งข้อมูลไปเก็บยัง Database SQLite TABLE name "weather_data"
 ```
+
+
+
+
+
 #### การเก็บข้อมูลลง Database SQLite
 ```bash
   1. สร้างตารางเก็บข้อมูล
