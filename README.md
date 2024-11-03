@@ -49,14 +49,9 @@
 ```
 ![image](https://github.com/user-attachments/assets/df70b8ee-6b50-4343-9880-31c35cbaac44)
 
-
-
+```bash
   4. ส่งข้อมูลไปเก็บยัง Database SQLite TABLE name "weather_data"
 ```
-
-
-
-
 
 #### การเก็บข้อมูลลง Database SQLite
 ```bash
