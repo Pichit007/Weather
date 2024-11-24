@@ -3,7 +3,7 @@ services:
   app:
     build: .
     ports:
-      - "3000:3001"
+      - "80:3001"
     volumes:
       - ./backend:/backend
 
