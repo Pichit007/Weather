@@ -7,7 +7,7 @@ const WeatherIconDetail = (props) => {
       component="img"
       className="bounce"
       sx={{
-        width: { xs: '50px', sm: '130px' },
+        width: { xs: '50px', sm: '220px' },
         height: 'auto',
         display: 'flex',
         alignItems: 'center',

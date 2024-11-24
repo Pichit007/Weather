@@ -17,8 +17,8 @@ const TemperatureWeatherDetail = (props) => {
         variant="h3"
         component="h3"
         sx={{
-          fontWeight: '600',
-          fontSize: { xs: '12px', sm: '14px', md: '16px' },
+          fontWeight: '700',
+          fontSize: { xs: '22px', sm: '22px', md: '22px' },
           color: 'white',
           textTransform: 'uppercase',
           lineHeight: 1,
@@ -32,7 +32,7 @@ const TemperatureWeatherDetail = (props) => {
         variant="h4"
         component="h4"
         sx={{
-          fontSize: { xs: '10px', sm: '12px', md: '14px' },
+          fontSize: { xs: '19px', sm: '19px', md: '19px' },
           color: 'rgba(255,255,255, .7)',
           lineHeight: 1,
           letterSpacing: { xs: '1px', sm: '0' },
