@@ -70,7 +70,7 @@ const GEO_API_OPTIONS = {
 };
 
 // Function to fetch city data
-export async function fetchCities(input) {
+async function fetchCities(input) {
   try {
     const response = await fetch(
       `${GEO_API_URL}/cities?minPopulation=10000&namePrefix=${input}`,
@@ -102,7 +102,7 @@ export async function fetchCities(input) {
 }
 
 // Function to fetch weather data
-export async function fetchWeatherData(lat, lon) {
+async function fetchWeatherData(lat, lon) {
   try {
     let [weatherPromise, forecastPromise] = await Promise.all([
       fetch(
@@ -152,6 +152,23 @@ function getCityId(lat, lon) {
   });
 }
 
+// Function to delete old weather data
+function deleteOldWeatherData() {
+  const currentDate = new Date();
+  const fifteenDaysAgo = new Date(currentDate.getTime() - (15 * 24 * 60 * 60 * 1000)); // 15 days ago
+
+  db.run(`DELETE FROM weather_data WHERE dt < ?`, [Math.floor(fifteenDaysAgo.getTime() / 1000)], (err) => {
+    if (err) {
+      console.error(err.message);
+    } else {
+      console.log("Deleted old weather data");
+    }
+  });
+}
+
+// Call the deleteOldWeatherData function every day
+setInterval(deleteOldWeatherData, 24 * 60 * 60 * 1000); // 24 hours in milliseconds
+
 // Endpoint to add weather data
 app.get('/weather', async (req, res) => {
     const { lat, lon } = req.query;
@@ -188,7 +205,7 @@ app.get('/weather', (req, res) => {
 
 app.get("*", (req, res) => {
     res.sendFile(path.join(__dirname, "public", "index.html"));
-  });
+});
 
 // Start the server
 app.listen(port, () => {
