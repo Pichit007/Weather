@@ -223,5 +223,5 @@ git push https://github.com/Pichit007/Weather.git
 
 ### Production
 ```bash
-Access on Web http://3.1.109.235:3000
+Access on Web http://3.1.109.235/:80
 ```
